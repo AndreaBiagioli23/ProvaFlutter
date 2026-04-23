@@ -54,25 +54,29 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
 
-      body: SingleChildScrollView(
-        child: Padding(
+      body: GridView.builder(
         padding: EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            for(var i in lista)
-            Container(
-              alignment: Alignment.center,
-              color: Colors.grey,
-              height: 100,
-              width: double.infinity,
-              margin: EdgeInsets.only(bottom: 20),
-              child: Text('$i'),
-            )
-          ],
+        itemCount: lista.length,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3, crossAxisSpacing: 8,mainAxisSpacing: 8), itemBuilder: (context, index){
+        return Container(
+            color: Colors.grey,
+            alignment: Alignment.center,
+            child: Text('$index')
 
-        ),
-      ),
-      ),
+        );
+      }),
+      // GridView.count(crossAxisCount: 3,
+      // mainAxisSpacing: 8,
+      // crossAxisSpacing: 8,
+      //  children: [
+      //   for(var i in lista)
+      //   Container(
+      //   
+
+      //   )
+      // ],),
+      
+      
         
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
