@@ -54,17 +54,31 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
 
-      body: GridView.builder(
-        padding: EdgeInsets.all(9.0),
-        itemCount: lista.length,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3, crossAxisSpacing: 8,mainAxisSpacing: 8), itemBuilder: (context, index){
-        return Container(
-            color: Colors.grey,
-            alignment: Alignment.center,
-            child: Text('$index')
+      body: SizedBox(
+        height: 690,
+        width: 600,
+        
+        child: Card(
+          margin: EdgeInsets.all(10),
+          shadowColor: Colors.red,
+          elevation: 30,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+          
+          child: Column(
+            children: [
+              Image.asset("images/immagine.jpg"),
+              const ListTile(
+                leading: CircleAvatar(backgroundImage: NetworkImage("https://i.pravatar.cc/300")),
+                title: Text("Ciao come stai"),
+                subtitle: Text("Tutto bene tu?"),
+                trailing: Icon(Icons.data_saver_off_outlined),
 
-        );
-      }),
+              )
+            ],
+          ),
+        ),
+
+      ),
       // GridView.count(crossAxisCount: 3,
       // mainAxisSpacing: 8,
       // crossAxisSpacing: 8,
