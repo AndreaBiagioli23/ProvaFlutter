@@ -14,13 +14,9 @@ class Secondapagina extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Text('Seconda pagina',style: TextStyle(fontSize: 45,fontWeight: FontWeight.bold),),
+          Hero(tag:'ImmagineCopertina',child: Image.asset('images/immagine.jpg',width: 400,)),
           Text(data,style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
-           ElevatedButton(onPressed: () {
-         Navigator.pushNamed(context, '/prima');
-      
-       },
-        child: Text("Cambia Pagina"))
+        
              ],
       ),
      
